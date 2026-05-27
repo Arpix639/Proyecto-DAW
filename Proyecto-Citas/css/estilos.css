@@ -1,0 +1,905 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f5f5f5;
+    margin: 0px;
+}
+
+body h1{
+    text-align: center;
+}
+
+.fondo-grad{
+    background: linear-gradient(135deg,#f7e7d3,#f2c6a0,#e8b98a);
+    min-height: 100vh;
+}
+
+.paginaPrincipal {
+    font-family: Arial, sans-serif;
+    background-color: #f5f5f5;
+    margin: 0px;
+}
+
+.fondo {
+    background-image: url(../img/peluqueria_log.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: left center;
+}
+
+h1, h2, h3 {
+    color: #333;
+}
+
+/* LINKS */
+a {
+    color: white;
+    display: inline-block;
+    text-decoration: none;
+}
+
+/* FORMULARIOS */
+form {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    max-width: 500px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+/* INPUTS */
+input, select {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    margin-bottom: 15px;
+    box-sizing: border-box;
+}
+
+/* BOTONES */
+button {
+    background-color: #28a745;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #218838;
+}
+
+.volver-btn{
+    display: inline-block;
+    margin-bottom: 15px;
+    padding: 8px 14px;
+    background: #b8865b;
+    color: white;
+    text-decoration: none;
+    border-radius: 6px;
+    font-weight: bold;
+    transition: 0.25s ease;
+}
+
+.volver-btn:hover{
+    background: #9f734d;
+    transform: translateX(-2px);
+}
+/* TARJETAS */
+.tarjeta {
+    background: white;
+    padding: 15px;
+    margin-bottom: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+/* LOGIN / REGISTRO */
+
+@keyframes animacionSubir {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+.auth-container {
+    display: flex;
+    justify-content: flex-start; /* izquierda */
+    align-items: center;
+    min-height: 80vh;
+
+    padding-left: 160px; /* separación de la pared */
+    padding-right: 20px; 
+    box-sizing: border-box;
+}
+
+.auth-card {
+    margin-bottom: 75px;
+    background: white;
+    padding: 25px;
+    border-radius: 8px;
+    max-width: 400px;
+    width: 100%;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    text-align: center;
+    animation: animacionSubir 0.6s ease-out;
+}
+
+.auth-card input {
+    width: 100%;
+    padding: 10px;
+    margin: 8px 0;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+}
+
+.auth-card button{
+    width: 100%;
+}
+ button.volver{
+    margin: 30px;
+    font-size: 25px;
+}
+
+.auth-card a {
+    background: none;
+    color: white;
+    padding: 0;
+    margin-top: 10px;
+}
+
+/* =========================
+   MODAL
+   ========================= */
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.5);
+}
+
+.modal-contenido {
+    background-color: white;
+    width: 350px;
+    padding: 20px;
+    border-radius: 8px;
+    margin: 15% auto;
+    text-align: center;
+}
+
+.modal-botones {
+    margin-top: 20px;
+}
+
+.modal-botones button,
+.modal-botones a {
+    margin: 5px;
+}
+
+/* =========================
+   TOAST (NOTIFICACIONES)
+   ========================= */
+
+.toast {
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    
+    padding: 12px 20px;
+    border-radius: 6px;
+    color: white;
+    font-size: 14px;
+    z-index: 9999;
+
+    opacity: 1;
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+/* TIPOS */
+.toast.success {
+    background-color: #28a745;
+}
+
+.toast.error {
+    background-color: #dc3545;
+}
+
+.toast.warning {
+    background-color: #ffc107;
+    color: #000;
+}
+
+/* salida */
+.toast.hide {
+    opacity: 0;
+    transform: translateX(-50%) translateY(-10px);
+}
+
+/* PÁGINA PRINCIPAL */
+.hero {
+    height: 100vh;
+    background-image: url('../img/peluqueria.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: left center;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    position: relative;
+}
+
+.hero-overlay {
+    background: rgba(0,0,0,0.6);
+    padding: 10px;
+    margin-top: 100px;
+    margin-left: 250px;
+    border-radius: 10px;
+    text-align: center;
+    color: white;
+    width: 325px;
+}
+
+.hero h1 {
+    font-size: 36px;
+    margin-bottom: 10px;
+}
+
+.hero p {
+    margin-bottom: 20px;
+    color: #ddd;
+}
+
+.hero-botones a {
+    display: block;
+    margin: 10px 0;
+    background: #007bff;
+    padding: 10px;
+    border-radius: 6px;
+    color: white;
+}
+
+.hero-botones a:hover {
+    background: #0056b3;
+}
+
+/* PANEL CLIENTE */
+.cliente-panel{
+    min-height:100vh;
+    background-image:url('../img/peluqueria_vacia.png');
+    background-size:cover;
+    background-position:left center;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+.cliente-overlay{
+    background: rgba(255,255,255,0.92);
+    padding: 40px;
+    border-radius: 15px;
+    width: 85%;
+    max-width: 900px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+}
+
+.cliente-overlay h1{
+    color: #333;
+}
+
+.saludo{
+    font-size: 22px;
+    margin-bottom: 5px;
+    color: #444;
+}
+
+.subtexto{
+    color: #777;
+    margin-bottom: 25px;
+}
+
+.cliente-botones{
+    margin-bottom:30px;
+}
+
+.cliente-botones a{
+    padding: 10px;
+    background: #b8865b;
+    color: white;
+    border-radius: 5px;
+}
+
+.cliente-botones a:hover{
+    background: #9f734d;
+}
+
+#cerrarSesion{
+    background-color: red;
+}
+
+#cerrarSesionCliente{
+    display: flex;
+    justify-content: flex-end;
+}
+
+#cerrarSesionCliente a{
+    background: red;
+    padding: 10px;
+    border-radius: 5px;
+}
+#cerrarSesionCliente a:hover{
+    background: rgb(172, 2, 2);
+    padding: 10px;
+    border-radius: 5px;
+}
+
+/* CALENDARIO SEMANAL CLIENTE */
+
+.semana-box{
+    margin-top: 25px;
+    padding: 20px;
+    border-radius: 10px;
+    background: rgba(255,255,255,0.08);
+}
+
+.semana-box h3{
+    margin-bottom: 15px;
+    color: #333;
+}
+
+.semana-grid{
+    display: flex;
+    gap: 10px;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.dia-box{
+    background: #f9f9f9;
+    border-radius: 10px;
+    padding: 12px;
+    flex: 1;
+    min-width: 110px;
+    text-align: center;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    transition: 0.25s ease;
+}
+
+.dia-box:hover{
+    transform: translateY(-2px);
+}
+
+.citas-info{
+    margin-top: 8px;
+}
+
+.con-cita{
+    color: #28a745;
+    font-weight: bold;
+}
+
+.sin-cita{
+    color: #999;
+    font-size: 13px;
+}
+
+/* SERVICIOS */
+.servicios-layout{
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+/* FORM */
+.servicio-form-card{
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+
+    /* 🔥 CLAVE */
+    height: 100%;
+    max-height: 400px; 
+    overflow-y: auto;
+
+    position: sticky;
+    top: 20px;
+}
+
+.servicio-form-card form{
+    background: none;
+    box-shadow: none;
+    padding: 0;
+}
+
+/* LISTA */
+.servicios-list{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+/* CARD SERVICIO */
+.servicio-card-admin{
+    background: white;
+    padding: 15px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    transition: transform 0.2s;
+}
+
+.servicio-card-admin:hover{
+    transform: translateY(-2px);
+}
+
+.servicio-info p{
+    margin: 3px 0;
+    color: #666;
+}
+
+/* SERVICIOS HOME CLIENTE */
+
+.servicios-box{
+    margin-top: 25px;
+    padding: 20px;
+    border-radius: 10px;
+    background: rgba(255,255,255,0.08);
+}
+
+.servicios-box h3{
+    margin-bottom: 15px;
+    color: #333;
+}
+
+.servicios-grid{
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.servicio-card{
+    background: #b8865b;
+    color: white;
+    padding: 12px 18px;
+    border-radius: 8px;
+    min-width: 120px;
+    text-align: center;
+    font-weight: bold;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    transition: 0.25s ease;
+}
+
+.servicio-card:hover{
+    background: #9f734d;
+    transform: translateY(-2px);
+    cursor: default;
+}
+
+/* BOTÓN DELETE */
+.btn-delete{
+    background: #dc3545;
+    color: white;
+    padding: 6px 10px;
+    border-radius: 6px;
+    text-decoration: none;
+}
+
+.btn-delete:hover{
+    background: #b02a37;
+}
+
+/* CITAS CLIENTE */
+.citas-fondo{
+    background: linear-gradient(135deg,#f7e7d3,#f2c6a0,#e8b98a);
+    min-height: 100vh;
+}
+
+
+.citas-grid{
+    display:flex;
+    gap:15px;
+    flex-wrap:wrap;
+}
+
+.cita-card{
+    background:white;
+    padding:15px;
+    border-radius:10px;
+    width:240px;
+    box-shadow:0 3px 10px rgba(0,0,0,0.1);
+    text-align:center;
+}
+
+/* ESTADOS */
+.cita-card.pendiente{
+    border-left:5px solid #ffc107;
+}
+
+.cita-card.confirmada{
+    border-left:5px solid #28a745;
+}
+
+.cita-card.cancelada{
+    border-left:5px solid #dc3545;
+    opacity:0.6;
+}
+
+/* BOTÓN CANCELAR */
+.cita-card a{
+    display:inline-block;
+    margin-top:10px;
+    background:#dc3545;
+}
+
+.cita-card a:hover{
+    background:#b02a37;
+}
+
+.estado{
+    font-weight:bold;
+}
+
+
+.crear-cita-wrapper{
+    min-height: 100vh;
+    background: linear-gradient(135deg,#f7e7d3,#f2c6a0,#e8b98a);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.crear-cita-box{
+    background: rgba(255,255,255,0.95);
+    padding: 35px;
+    border-radius: 15px;
+    width: 420px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+    text-align: center;
+}
+
+.crear-cita-box h1{
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.crear-cita-box p{
+    color: #777;
+    margin-bottom: 15px;
+}
+
+.crear-cita-box form{
+    background: none;
+    box-shadow: none;
+    padding: 0;
+}
+
+.crear-cita-box label{
+    display:block;
+    text-align:left;
+    margin-top:10px;
+    color:#444;
+}
+
+#reserva-button{
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.red-button{
+    background-color: red;
+}
+
+#volver{
+    color: rgb(201, 176, 66);
+}
+
+.crear-cita-box select,
+.crear-cita-box input{
+    width:100%;
+    padding:10px;
+    margin-top:5px;
+    border-radius:6px;
+    border:1px solid #ddd;
+}
+
+.crear-cita-box button{
+    margin-top:15px;
+    width:100%;
+    background:#b8865b;
+}
+
+.crear-cita-box button:hover{
+    background:#9f734d;
+}
+
+/* ADMIN */
+.admin-panel{
+    min-height: 100vh;
+    background: linear-gradient(135deg,#f7e7d3,#f2c6a0,#e8b98a);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.admin-overlay{
+    background: rgba(255,255,255,0.92);
+    padding: 40px;
+    border-radius: 15px;
+    width: 500px;
+    text-align: center;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+}
+
+.admin-saludo{
+    color: #666;
+    margin-bottom: 25px;
+}
+
+.admin-grid{
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.admin-card{
+    background: #b8865b;
+    color: white;
+    text-decoration: none;
+    padding: 20px;
+    border-radius: 10px;
+    width: 180px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.admin-card:hover{
+    background: #9f734d;
+    transform: translateY(-3px);
+}
+
+.admin-logout{
+    display: inline-block;
+    margin-top: 10px;
+    background: red;
+    color: white;
+    padding: 10px 15px;
+    border-radius: 6px;
+    text-decoration: none;
+}
+
+.admin-logout:hover{
+    background: darkred;
+}
+
+
+.cita-admin-card{
+    background: white;
+    padding: 15px;
+    margin-bottom: 15px;
+    border-radius: 10px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+    width: 300px;
+}
+
+.citas-container{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    justify-content: center;
+    transition: transform 0.2s ease;
+}
+
+.cita-admin-card:hover{
+    transform: translateY(-3px);
+}
+
+.cita-admin-card p{
+    margin: 5px 0;
+}
+
+/* ESTADOS VISUALES */
+.cita-admin-card.pendiente{
+    border-left: 5px solid #ffc107;
+}
+
+.cita-admin-card.confirmada{
+    border-left: 5px solid #28a745;
+}
+
+.cita-admin-card.cancelada{
+    border-left: 5px solid #dc3545;
+    opacity: 0.6;
+}
+
+/* BOTONES */
+.admin-actions{
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.admin-actions a{
+    flex: 1;
+    text-align: center;
+    padding: 6px;
+    border-radius: 5px;
+    color: white;
+    font-size: 13px;
+}
+
+.admin-actions a:first-child{
+    background: #28a745;
+}
+
+.admin-actions a:last-child{
+    background: #dc3545;
+}
+
+.estado{
+    font-weight: bold;
+    text-transform: capitalize;
+}
+
+.filtros{
+    display: flex;
+    justify-content: flex-start; /* izquierda */
+
+    padding-left: 160px; /* separación de la pared */
+    padding-right: 20px; 
+    box-sizing: border-box;
+}
+
+.filter-bar{
+    background: #b8865b;
+    color: white;
+    padding: 10px;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-bottom: 10px;
+    width: fit-content;
+}
+
+.filtro-form{
+    transition: all 0.3s ease;
+    margin-bottom: 20px;
+}
+
+.oculto{
+    display: none;
+}
+
+/* CALENDARIO ADMIN */
+.admin-semana-box{
+    margin-top: 25px;
+    border-radius: 12px;
+    background: rgba(255,255,255,0.6);
+}
+
+.admin-semana-grid{
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 10px;
+}
+
+.admin-dia-box{
+    background: white;
+    border-radius: 10px;
+    padding: 12px;
+    text-align: center;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    transition: transform 0.2s;
+}
+
+.admin-dia-box:hover{
+    transform: translateY(-3px);
+}
+
+.admin-dia-fecha{
+    font-weight: bold;
+    margin-bottom: 6px;
+}
+
+.admin-dia-numero{
+    color: #b8865b;
+    font-weight: bold;
+}
+
+.admin-dia-box.hoy{
+    border: 2px solid #b8865b;
+    background: #fff7ef;
+}
+
+@media (max-width: 768px) {
+
+    .cliente-overlay{
+        width: 95%;
+        padding: 20px;
+    }
+
+    .hero-overlay{
+        margin-left: 0;
+        width: 90%;
+    }
+
+    .auth-card{
+        margin-left: 0;
+        margin-bottom: 0;
+    }
+
+    .semana-grid{
+        flex-direction: column;
+    }
+
+    .dia-box{
+        width: 100%;
+    }
+
+    .citas-grid{
+        justify-content: center;
+    }
+
+    .cita-card{
+        width: 90%;
+    }
+
+    .admin-overlay{
+        width: 90%;
+        padding: 25px;
+    }
+
+    .admin-grid{
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .admin-card{
+        width: 100%;
+        max-width: 280px;
+    }
+
+    .cita-admin-card{
+        width: 90%;
+    }
+
+    .citas-container{
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .auth-container {
+        justify-content: center; /* en móvil centrado */
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    .filter-bar{
+        width: 100%;
+        text-align: center;
+    }
+
+    .filtro-form form{
+        flex-direction: column;
+    }
+
+     .servicios-layout{
+        grid-template-columns: 1fr;
+    }
+
+}
